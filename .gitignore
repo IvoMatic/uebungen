@@ -1,3 +1,6 @@
-.idea/
 .idea/workspace.xml
+.idea/modules.xml
+.idea/usage.statistics.xml
+.idea/tasks.xml
+.idea/shelf/
 out/
