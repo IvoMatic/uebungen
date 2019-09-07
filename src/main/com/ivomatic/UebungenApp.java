@@ -2,6 +2,7 @@ package com.ivomatic;
 
 import com.ivomatic.model.Bevollmaechtigter;
 import com.ivomatic.model.Kunde;
+import com.ivomatic.util.FormatUtil;
 
 public class UebungenApp {
 
@@ -36,7 +37,7 @@ public class UebungenApp {
 
         Bevollmaechtigter bevollmaechtigter2 = new Bevollmaechtigter(
                 "Maja",
-                null,
+                "",
                 "Bicanic",
                 "Plitvicka ul.",
                 "12",
