@@ -1,6 +1,6 @@
 package com.ivomatic.model;
 
-public class Person {
+public class Kunde {
 
     private String firstName;
     private String lastName;
@@ -13,8 +13,8 @@ public class Person {
     private String fullName;
     private String address;
 
-    public Person(String firstName, String lastName,
-                  String street, String houseNumber, String zipCode, String city) {
+    public Kunde(String firstName, String lastName,
+                 String street, String houseNumber, String zipCode, String city) {
 
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,6 +22,13 @@ public class Person {
         this.houseNumber = houseNumber;
         this.zipCode = zipCode;
         this.city = city;
+
+        fullName = firstName + " " + lastName;
+        address = street + " " + houseNumber + ", " + zipCode + " " + city;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getFirstName() {
@@ -74,10 +81,6 @@ public class Person {
 
     public String getFullName() {
         return fullName;
-    }
-
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
     }
 
     public String getAddress() {
