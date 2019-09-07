@@ -1,8 +1,11 @@
 package com.ivomatic.model;
 
+import com.ivomatic.util.FormatUtil;
+
 public class Kunde {
 
     private String firstName;
+    private String middleName;
     private String lastName;
 
     private String street;
@@ -13,18 +16,19 @@ public class Kunde {
     private String fullName;
     private String address;
 
-    public Kunde(String firstName, String lastName,
+    public Kunde(String firstName, String middleName, String lastName,
                  String street, String houseNumber, String zipCode, String city) {
 
         this.firstName = firstName;
+        this.middleName = middleName;
         this.lastName = lastName;
         this.street = street;
         this.houseNumber = houseNumber;
         this.zipCode = zipCode;
         this.city = city;
 
-        fullName = firstName + " " + lastName;
-        address = street + " " + houseNumber + ", " + zipCode + " " + city;
+        fullName = FormatUtil.createFullName(firstName, middleName, lastName);
+        address = FormatUtil.createAddress(street, houseNumber, zipCode, city);
     }
 
     public void setFullName(String fullName) {

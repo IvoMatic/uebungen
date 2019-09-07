@@ -1,7 +1,10 @@
 package com.ivomatic.model;
 
+import com.ivomatic.util.FormatUtil;
+
 public class Bevollmaechtigter {
     private String firstName;
+    private String middleName;
     private String lastName;
 
     private String street;
@@ -12,16 +15,17 @@ public class Bevollmaechtigter {
     private String fullName;
     private String address;
 
-    public Bevollmaechtigter(String firstName, String lastName, String street, String houseNumber, String zipCode, String city) {
+    public Bevollmaechtigter(String firstName, String middleName, String lastName, String street, String houseNumber, String zipCode, String city) {
         this.firstName = firstName;
+        this.middleName = middleName;
         this.lastName = lastName;
         this.street = street;
         this.houseNumber = houseNumber;
         this.zipCode = zipCode;
         this.city = city;
 
-        fullName = firstName + " " + lastName;
-        address = street + " " + houseNumber + ", " + zipCode + " " + city;
+        fullName = FormatUtil.createFullName(firstName, middleName, lastName);
+        address = FormatUtil.createAddress(street, houseNumber, zipCode, city);
     }
 
     public String getFirstName() {
@@ -86,5 +90,13 @@ public class Bevollmaechtigter {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public String getMiddleName() {
+        return middleName;
+    }
+
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
     }
 }
